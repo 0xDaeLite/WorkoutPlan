@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+The first commit was just to set the structure for this workout plan app.
+It will essentially function as a todo list with a few extra bells and whistles.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+My goal is to show me which exercises I need to complete at which level on any given day.
+Eventually I want to track my progress which I can review in a list or graphical format.
+If there was no plan available I would be able to custom build my workout with exercises (given several constraints).
+This plan would also be editable but that's a post-MVP feature.
 
-## Available Scripts
+I learned react very crudely after reading/following the react.js tutorial docs and watching some youtube videos for a simple todolist.
 
-In the project directory, you can run:
+2022-05-12
+After taking over a week to process and focus on other things, I returned to make progress on this app.
+What really stumped me last time was changing state properly and passing updated state changes to parent components.
 
-### `npm start`
+A couple things I still don't fully understand are: state change fundamentals, setting up components, basic JS (bind, arrow functions, etc) among others. I clearly don't know a lot, but I am taking a primarily greedy approach to this app and will worry about refactoring later for clean, error free code.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+So far I managed to get rid of the uncontrolled/controlled error dealing with the inputs for creating a new workout plan.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Next round, I will need to work on the following:
+1. need a tickbox for the TYPE input (weighted vs reps), which will trigger the VALUE input to either be
+3 inputs (for pullup reps in 3 sets) or 1 (for weighted)
+2. how to handle submitted data - I need to be able to view and edit it (if the weight is too much or wrong)
+3. how to visualize it properly as a workout plan
+4. how to increment things as i progress
+5. confirm state is being stored and used properly
+n. refactoring code/components and using hooks instead of my current react tutorial-esque setup
 
-### `npm test`
+I know I'm missing a lot of things. It's all disorganized in my head but I know I need to continue hacking at it instead
+of worrying about the order of things. In the future I'll workout a system but for now it's just pure hacking until I 
+get a react MVP out.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This is my first react (also web) app so I'm not gonna pressure myself too much. In subsequent relesaes and other react apps
+I'll take a more crisp approach.

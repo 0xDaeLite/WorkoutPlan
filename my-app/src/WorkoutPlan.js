@@ -9,13 +9,14 @@ export default class WorkoutPlan extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            exercises: []
+            exercises: [],
             //list of Exercises
             //base case: 0 exercises, button to create workoutplan
+            createClicked : false
         };
     }
-    createWorkoutPlan = () => {
-        this.setState({exercises : ["hello"]});
+    createWorkoutPlan = (name, workoutId, type, value) => { //why does setState only get recognized with the arrow function
+        this.setState({exercises : [name, workoutId, type, value]});
         //plus button
         //Workout A
             //form: type exercise, add current weight
@@ -23,7 +24,6 @@ export default class WorkoutPlan extends Component {
         //Workout B
             //same form
     }
-
     getDate() {
         return Date();
     }
@@ -32,22 +32,32 @@ export default class WorkoutPlan extends Component {
         return <Exercise name={name} workoutId={workoutId} type={type} value={value} />;
     }
 
+    handleCreateClick() {
+        this.setState({createClicked: true});
+    }
+
     render() {
         const exercises = this.state.exercises;
-        if (!exercises.length > 0){
-            console.log("here")
+        console.log(exercises);
+        //state 1: fresh user wants to create a plan but hasn't clicked create yet
+        if (!exercises.length > 0 && !this.state.createClicked){
             return (
-                <WorkoutPlanCreator createWorkoutPlan={this.createWorkoutPlan} />
+                <button onClick={() => this.handleCreateClick()}>Create Workout Plan</button>
             )
         }
+        //state 2: fresh user clicks create
+        else if (!exercises.length > 0 && this.state.createClicked){
+            return (
+                <WorkoutPlanCreator createWorkoutPlan={this.createWorkoutPlan}/>
+            )
+        }
+        //state 3: user has submitted his workout plan and can view it on a daily basis
         else {
+        //TODO states n: depending on the day user will see a plan for A, B or REST
             return ( //box will be drawn within the fragment
             <>
                 <div>{this.getDate()}</div>
                 <div>{exercises}</div>
-                <div>{this.addExercise("sqats", "A", "weighted", 69)}</div>
-                <div>associated weights/rep requirements for each of the exercises</div>
-                <div>checkbox for EZ (if EZ then up 2.5lb next day)</div>
                 <input type="text" />
                 <button>submit</button>
             </>
